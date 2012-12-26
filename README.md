@@ -74,7 +74,9 @@ switch depending on what it is.
 
 This makes it compatible with both `gvfs-open`, which passes straight paths
 to it, and XFCE tools like `exo-open` that prefer to pass `file:///` URIs
-to everything.
+to everything.  It will also handle running without arguments, for the
+benefit of launchers that specify target directories by switching working
+directory.
 
 It's a `perl` script so you'll need perl installed.  It doesn't rely on any
 CPAN modules at the moment.
