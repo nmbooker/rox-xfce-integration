@@ -93,16 +93,6 @@ those are more up to date and stable in my opinion (and there are more of
 them).  I think much of the ROX plugins have been left behind unfortunately.
 
 # Limitations of this setup
-
-Since changing to my `rox-wrapper` the `Directory Menu` panel plugin
-doesn't seem to work - `rox` responds with an error message dialog box:
-
-```
-File doesn't exist, or I can't access it:
-```
-
-Why?  Answers on a postcard (or, better, in an issue ticket or patch).
-
 If you `send to wastebasket` any items on the XFCE desktop, they still get
 sent to the usual trash can that's managed by Thunar, so Thunar is still
 needed to permanently delete or to restore anything in there.
