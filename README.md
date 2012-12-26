@@ -173,3 +173,53 @@ from rox get focus, so you can start typing in them immediately.
 
 If you end up with things stealing focus that you don't want to, re-enable
 this.
+
+# Drag and Drop Loading
+
+If you do `File` -> `Open...` within a GTK2 or GTK3 application, and drop
+the file on the browser, it will navigate straight to the file,
+ready for you to press Open.
+
+Some GTK applications support loading of files by dragging and dropping a
+file icon into the main area.  Others will insert the content of the
+file wherever you drop it, while some will insert the path to the file
+you dropped.
+
+OpenOffice will insert an image in the document if you drop one in an open
+document.
+
+# Drag and Drop Save
+
+Most applications from the ROX project support drag and drop saving.
+
+See https://github.com/nmbooker/gtk-xds for dirty patches for GTK2 and GTK3
+enabling basic drag and drop save support within any applications that use
+the standard Gtk+ gtkfilechooser for saving.
+
+You should be comfortable patching and compiling Debian and Ubuntu source
+packages for personal use if you want that.
+
+# Generating Application Directories for your favourite apps
+
+## .desktop files
+An ugly way is just to copy the `.desktop` file into your Apps folder.
+You can do that by dragging and dropping entries from the menu.
+ROX will display the icon, but will display the `blah.desktop` filename
+directly, and it doesn't give you much opportunity to customise behaviour
+when a file or stream is dropped on the application icon.
+
+## Proper Applicaiton Directory wrappers
+A good way to get a proper skeleton wrapper is to use the `AppFactory`
+app from the ROX file manager.  Specify a binary name to run and drop an
+icon for it, click Create, specify a name you want to see it as and drag-and-drop it into your Apps directory.  You can then modify the AppRun and AppInfo.xml files to customise the way it handles arguments.
+
+Installing AppFactory and its dependency ROX-CLib2:
+
+1. `mkdir ~/lib`
+2. `rox ~/lib`
+3. `sudo apt-get install build-essential libgtk2.0-dev libxml2-dev autoconf automake`  # or equivalent
+4. Download ROX-CLib2 from http://sourceforge.net/projects/rox/files/ROX-CLib/
+5. Extract the ROX-CLib2 directory in the archive into `~/lib`
+6. Double-click ROX-CLib2 in the ROX window and, assuming you have your C compiler and all the gtk2 development headers installed, it should build.
+7. Download and extract AppFactory from rox.sourceforge.net into your Apps directory.
+8. Double-click AppFactory.  It should automatically build against your ROX-CLib2 and run.
