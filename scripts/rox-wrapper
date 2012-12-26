@@ -71,7 +71,7 @@ rox-wrapper - wrapper for rox
 
 =head1 SYNOPSIS
 
-rox-wrapper [options] uri_or_path
+rox-wrapper [options] [uri_or_path]
 
  Options:
     -h, --help              brief help message
@@ -100,6 +100,11 @@ Print the manual page and exit.
 B<rox-wrapper> will launch B<rox> with the single uri_or_path passed into
 the command line, including the "-U" switch if it looks like a URI,
 otherwise excluding it.
+
+If uri_or_path is not specified, B<rox> is called without any arguments,
+which causes it to open a window on the current working directory.
+This behaviour is expected by tools like the B<Directory Menu> plugin
+on the XFCE4 Panel.
 
 =head1 LIMITATIONS
 
