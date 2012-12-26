@@ -9,10 +9,12 @@ use diagnostics;
 my $options = get_options();
 
 my @cmd = ('rox');
-if (looks_like_uri($options->{uri})) {
-    push @cmd, '-U';
+if (defined $options->{uri}) {
+    if (looks_like_uri($options->{uri})) {
+        push @cmd, '-U';
+    }
+    push @cmd, $options->{uri};
 }
-push @cmd, $options->{uri};
 print STDERR "@cmd\n";
 unless (exec @cmd) {
     print STDERR "couldn't exec (@cmd): $!\n";
