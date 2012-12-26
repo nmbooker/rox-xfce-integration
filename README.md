@@ -178,7 +178,7 @@ its border, hold down `Alt` and LEFT-click anywhere in the window.
 
 * `[ ]` Activate focus stealing prevention
 
-That makes sure that newly-opened terminal windows opened with the `\`` key
+That makes sure that newly-opened terminal windows opened with the Backtick key
 from rox get focus, so you can start typing in them immediately.
 
 If you end up with things stealing focus that you don't want to, re-enable
