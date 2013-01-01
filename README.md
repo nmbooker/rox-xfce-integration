@@ -235,5 +235,7 @@ is).
 It complains `permission denied` when it tries to run exo-open.
 
 To fix this:
+
 1. ```sudo cp apparmor.d/local/usr.bin.evince /etc/apparmor.d/local/usr.bin.evince```
+
 2. ```sudo apparmor_parser -r /etc/apparmor.d/usr.bin.evince```  # [sic]
