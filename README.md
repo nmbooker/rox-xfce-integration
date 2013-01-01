@@ -225,3 +225,15 @@ Installing AppFactory and its dependency ROX-CLib2:
 6. Double-click ROX-CLib2 in the ROX window and, assuming you have your C compiler and all the gtk2 development headers installed, it should build.
 7. Download and extract AppFactory from rox.sourceforge.net into your Apps directory.
 8. Double-click AppFactory.  It should automatically build against your ROX-CLib2 and run.
+
+
+# Evince "Open Containing Folder" feature
+In Xubuntu Precise, Evince will fail to "Open Containing Folder", at
+`exo-open` (so this isn't necessarily ROX specific though part of my fix
+is).
+
+It complains `permission denied` when it tries to run exo-open.
+
+To fix this:
+1. ```sudo cp apparmor.d/local/usr.bin.evince /etc/apparmor.d/local/usr.bin.evince```
+2. ```sudo apparmor_parser -r /etc/apparmor.d/usr.bin.evince```  # [sic]
