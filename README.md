@@ -210,7 +210,7 @@ ROX will display the icon, but will display the `blah.desktop` filename
 directly, and it doesn't give you much opportunity to customise behaviour
 when a file or stream is dropped on the application icon.
 
-## Proper Applicaiton Directory wrappers
+## Proper Application Directory wrappers
 A good way to get a proper skeleton wrapper is to use the `AppFactory`
 app from the ROX file manager.  Specify a binary name to run and drop an
 icon for it, click Create, specify a name you want to see it as and drag-and-drop it into your Apps directory.  You can then modify the AppRun and AppInfo.xml files to customise the way it handles arguments.
