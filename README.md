@@ -236,6 +236,8 @@ It complains `permission denied` when it tries to run exo-open.
 
 To fix this:
 
-1. ```sudo cp apparmor.d/local/usr.bin.evince /etc/apparmor.d/local/usr.bin.evince```
+1. ```sudo cp /etc/apparmor.d/local/usr.bin.evince /root/usr.bin.evince.backup```  # make a backup of file we're about to replace, if it exists
 
-2. ```sudo apparmor_parser -r /etc/apparmor.d/usr.bin.evince```  # [sic]
+2. ```sudo cp apparmor.d/local/usr.bin.evince /etc/apparmor.d/local/usr.bin.evince```
+
+3. ```sudo apparmor_parser -r /etc/apparmor.d/usr.bin.evince```  # [sic]
