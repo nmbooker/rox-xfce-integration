@@ -1,0 +1,29 @@
+# Site-specific additions and overrides for usr.bin.evince.
+# For more details, please see /etc/apparmor.d/local/README.
+# This enables opening rox from evince's "Open Containing Directory"
+# feature, at least in Xubuntu 12.04 x86_64
+
+# Based on discussions in https://bugs.launchpad.net/ubuntu/+source/evince/+bug/987578
+# particularly comments #11, #12 and #13.  Thanks storvann, jdstrand and mramsell
+
+# Copy to /etc/apparmor.d/local
+# sudo apparmor_parser -r /etc/apparmor.d/usr.bin.evince
+
+/usr/bin/exo-open ixr,
+/usr/lib/i386-linux-gnu/xfce4/exo-1/exo-helper-1 ixr,
+/usr/lib/x86_64-linux-gnu/xfce4/exo-1/exo-helper-1 ixr,
+/etc/xdg/xdg-xubuntu/xfce4/helpers.rc r,
+/etc/xdg/xfce4/helpers.rc r,
+# Next line lets rox-wrapper and any of its children execute anything (I think)
+/usr/local/bin/rox-wrapper Ux,
+
+# Below: the beginnings of a more restrictive version I never quite got
+# working.
+#/usr/local/bin/rox-wrapper ixr,
+#/usr/bin/perl ixr,
+#/usr/share/perl/5.14/XSLoader.pm ixr,
+#/usr/share/perl/5.14/Pod/Usage.pm ixr,
+#/usr/lib/perl/5.14/auto/Encode/Encode.so ixr,
+#/usr/share/perl/5.14/Pod/Text.pm ixr,
+
+
